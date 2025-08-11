@@ -38,7 +38,7 @@ def login_user(request):
 @permission_classes([AllowAny])
 def register_user(request):
 
-    email = request.data.get('email', None)
+    email = request.data.get('username', None)
     first_name = request.data.get('first_name', None)
     last_name = request.data.get('last_name', None)
     password = request.data.get('password', None)
@@ -52,7 +52,7 @@ def register_user(request):
             # Create a new user by invoking the `create_user` helper method
             # on Django's built-in User model
             new_user = User.objects.create_user(
-                username=request.data['email'],
+                username=request.data['username'],
                 email=request.data['email'],
                 password=request.data['password'],
                 first_name=request.data['first_name'],

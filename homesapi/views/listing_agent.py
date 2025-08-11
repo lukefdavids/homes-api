@@ -6,7 +6,7 @@ from rest_framework import status
 from homesapi.models import ListingAgent
 
 
-class ListingAgentSerializer(serializers.HyperlinkedModelSerializer):
+class ListingAgentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ListingAgent
