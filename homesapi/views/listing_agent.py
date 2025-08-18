@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from homesapi.models import ListingAgent
+from rest_framework.decorators import action, permission_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 
 class ListingAgentSerializer(serializers.ModelSerializer):
@@ -15,7 +17,7 @@ class ListingAgentSerializer(serializers.ModelSerializer):
 
 
 class ListingAgentViewSet(ViewSet):
-
+    permission_classes=[AllowAny]
     def list(self, request):
         agents = ListingAgent.objects.all()
         serializer = ListingAgentSerializer(agents, many=True)

@@ -7,8 +7,8 @@ from rest_framework import status
 from homesapi.models import ListingAgent, Home, HomeType, FavoriteHome
 from .listing_agent import ListingAgentSerializer
 from .home_type import HomeTypeSerializer
-from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import action, permission_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 class HomeSerializer(serializers.ModelSerializer):
     home_type = HomeTypeSerializer()
@@ -17,7 +17,7 @@ class HomeSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Home
-        fields = ("id", "beds", "bath", "sqft", "price", "description", "address", "state", "zip", "image", "home_type", "listing_agent", "is_favorited")
+        fields = ("id", "beds", "bath", "sqft", "price", "description", "address", "state", "zip", "lat", "lng", "image", "home_type", "listing_agent", "is_favorited")
 
     def get_is_favorited(self, obj):
         request=self.context.get('request')
@@ -30,6 +30,11 @@ class HomeSerializer(serializers.ModelSerializer):
 
 class HomeViewSet(ViewSet):
 
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [AllowAny()]  
+        return [IsAuthenticated()]
+    
     def create(self, request):
         home = Home()
         home.beds = request.data["beds"]
@@ -41,6 +46,8 @@ class HomeViewSet(ViewSet):
         home.state = request.data["state"]
         home.zip = request.data["zip"]
         home.image = request.data["image"]
+        home.lat = request.data["lat"]
+        home.lng = request.data["lng"]
         home.user = request.user
 
         home_type = HomeType.objects.get(pk=request.data["home_type"])
@@ -54,11 +61,12 @@ class HomeViewSet(ViewSet):
         serializer = HomeSerializer(home, context={'request': request})
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
+    
     def list(self, request):
         homes = Home.objects.all()
         serializer = HomeSerializer(homes, many=True, context={'request': request})
         return Response(serializer.data)
+    
     
     def retrieve(self, request, pk=None):
         try:
@@ -117,7 +125,7 @@ class HomeViewSet(ViewSet):
             serializer = HomeSerializer(home, context={'request': request})
             return Response(serializer.data)
         except Home.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+            return Response(None, status=status.HTTP_200_OK)
                         
     @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated])
     def favorite(self, request, pk=None):

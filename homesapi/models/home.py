@@ -29,6 +29,8 @@ class Home(models.Model):
     address = models.CharField(max_length=255)
     state = models.CharField(max_length=50)
     zip = models.CharField(max_length=10)  
+    lng = models.FloatField()
+    lat = models.FloatField()
     image = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)    
     updated_at = models.DateTimeField(auto_now_add=True)    
