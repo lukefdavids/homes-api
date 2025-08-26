@@ -33,21 +33,21 @@ This is the backend API for **Nashville Homes**, a solo capstone project built a
    cd nashville-homes-backend
 
 2. Create and activate a virtual environment:
-  ```bash
-    python -m venv env
-    source env/bin/activate
+   
+      ```bash
+      python -m venv env
+      source env/bin/activate
 
 3. Install dependencies:
-  ```bash
-  pip install -r requirements.txt
+
+      ```bash
+      pip install -r requirements.txt
 
 4. Run migrations and seed database:
-  ```bash
-  ./seed_database.sh
+
+      ```bash
+      ./seed_database.sh
 
 5. Start the development server
 
-
-### Frontend Repository:
-Nashville Homes Frontend
 
