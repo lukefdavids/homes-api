@@ -1,0 +1,52 @@
+[
+  {
+    "model": "homesapi.listingagent",
+    "pk": 1,
+    "fields": {
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@realty.com",
+      "phone": "(555) 123-4567",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face"
+    }
+  },
+  {
+    "model": "homesapi.listingagent",
+    "pk": 2,
+    "fields": {
+      "name": "Michael Chen",
+      "email": "michael.chen@realty.com",
+      "phone": "(555) 234-5678",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+    }
+  },
+  {
+    "model": "homesapi.listingagent",
+    "pk": 3,
+    "fields": {
+      "name": "Amanda Rodriguez",
+      "email": "amanda.rodriguez@realty.com",
+      "phone": "(555) 345-6789",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+    }
+  },
+  {
+    "model": "homesapi.listingagent",
+    "pk": 4,
+    "fields": {
+      "name": "David Thompson",
+      "email": "david.thompson@realty.com",
+      "phone": "(555) 456-7890",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    }
+  },
+  {
+    "model": "homesapi.listingagent",
+    "pk": 5,
+    "fields": {
+      "name": "Jessica Williams",
+      "email": "jessica.williams@realty.com",
+      "phone": "(555) 567-8901",
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face"
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "model": "homesapi.hometype",
+    "pk": 1,
+    "fields": {
+      "name": "Single Family Home"
+    }
+  },
+  {
+    "model": "homesapi.hometype",
+    "pk": 2,
+    "fields": {
+      "name": "Condo"
+    }
+  },
+  {
+    "model": "homesapi.hometype",
+    "pk": 3,
+    "fields": {
+      "name": "Townhome"
+    }
+  }
+]
