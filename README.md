@@ -1,6 +1,6 @@
 # Nashville Homes — Backend
 
-This is the backend API for **Nashville Homes**, a solo capstone project built at [Nashville Software School](https://nashvillesoftwareschool.com/). It powers the frontend React app and handles data storage, authentication, and CRUD logic using Django and Django REST Framework.
+This is the backend of ***Nashville Homes***, a solo capstone project built as the culmination of six months of full-stack development training at [Nashville Software School](https://nashvillesoftwareschool.com/). It powers the frontend React app and handles data storage, authentication, and CRUD logic using Django and the Django REST Framework.
 
 > 🔗 [Frontend Repository](https://github.com/lukefdavids/homes-client)
 ---
@@ -11,7 +11,6 @@ This is the backend API for **Nashville Homes**, a solo capstone project built a
 - Django
 - Django REST Framework (DRF)
 - SQLite3
-- Django CORS Headers
 - DRF Token Authentication
 
 ---
