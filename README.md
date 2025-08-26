@@ -5,7 +5,7 @@ This is the backend API for **Nashville Homes**, a solo capstone project built a
 > 🔗 [Frontend Repository](https://github.com/lukefdavids/homes-client)
 ---
 
-## 🛠Technologies Used
+## Technologies Used
 
 - Python 3.13.3
 - Django
